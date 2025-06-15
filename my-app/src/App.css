@@ -19,3 +19,42 @@
   padding: 0px 20px;
   margin: 10px;
 }
+
+
+.res-card {
+  width: 200px;
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+  margin: 10px;
+  background-color: aquamarine;
+}
+
+.res-card:hover{
+  cursor: pointer;
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+}
+
+.res-card-logo {
+  width: 100%;
+}
+
+h3{
+  margin: 3px;
+}
+
+h5{
+  margin: 3px;
+}
+.res-loc{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.res-container{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+}
