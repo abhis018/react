@@ -19,12 +19,13 @@ const Header = () => {
   )
 };
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+  const {resData} = props;
   return (
     <div className='res-card'>
       <img className="res-card-logo" src="https://i0.wp.com/swatisani.net/kitchen/wp-content/uploads/2015/10/IMG_9526.jpg"></img>
-      <h3>India Hotel</h3>
-      <h5>3.6 star</h5>
+      <h3>{resData.data.name}</h3>
+      <h5>{resData.data.avgRating} stars</h5>
       <h5>Flat ₹125 OFF above ₹649</h5>
       <div className='res-loc'>
         <h5>10 - 15 mins</h5>
@@ -35,21 +36,16 @@ const RestaurantCard = () => {
   )
 };
 
+const resList = [{},{},{},{},{},{},{},{},{},{}];
+
 const Body = () => {
   return (
     <div className="body">
         <div className='search-bar'>Search</div>
         <div className='res-container'>
-          <RestaurantCard/>
-          <RestaurantCard/>
-          <RestaurantCard/>
-          <RestaurantCard/>
-          <RestaurantCard/>
-          <RestaurantCard/>
-          <RestaurantCard/>
-          <RestaurantCard/>
-          <RestaurantCard/>
-          <RestaurantCard/>
+          {resList.map((restaurant) => (
+            <RestaurantCard key={} resData = {restaurant}/>
+          ))} 
         </div>
       </div>
   )
