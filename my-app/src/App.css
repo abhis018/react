@@ -28,6 +28,7 @@
   text-align: center;
   margin: 17px;
   background-color: aquamarine;
+  overflow: hidden;
 }
 
 .res-card:hover{
@@ -36,8 +37,8 @@
   box-shadow: 0 12px 20px rgba(0,0,0,0.3);
 }
 
-.res-card-logo {
-  width: 100%;
+.res-logo {
+  width:100%;
 }
 
 h3{
