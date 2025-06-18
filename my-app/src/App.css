@@ -2,6 +2,12 @@
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
+  color: white;
+  background-color: darkblue;
+}
+
+.body{
+  background-color: #00CED1;
 }
 
 .logo{
@@ -13,11 +19,14 @@
   display: flex;
   list-style-type: none;
   font-size: 15px;
+  margin-right: 5px;
 }
 
 .nav-container > ul > li {
   padding: 0px 20px;
   margin: 10px;
+  color: #fff;
+  text-shadow:  3px 3px 0 #6d0aca;
 }
 
 
@@ -44,7 +53,9 @@
 h3{
   margin: 3px;
 }
-
+h1{
+  text-align: center;
+}
 h5{
   margin: 3px;
 }
@@ -58,4 +69,109 @@ h5{
   display: flex;
   flex-wrap: wrap;
   margin: 5px;
+}
+
+.shimmer-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-card{
+  width: 200px;
+  height: 350px;
+  background-color: #e0e0e0;
+  margin: 25px;
+}
+
+.img-logo{
+  width: 190px;
+  height: 200px;
+  background-color: #cccccc;
+  margin: 5px;
+}
+
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  letter-spacing: 0.5px;
+  text-shadow:  3px 3px 0 #6d0aca;
+}
+
+.btn.login {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: #fff;
+}
+
+.btn.login:hover {
+  background: linear-gradient(to right, #5a67d8, #6b46c1);
+  transform: scale(1.05);
+}
+
+
+.filter{
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+
+.filter-btn{
+  padding: 6px 14px;
+  border: none;
+  border-radius: 25px;
+  background-color: #ffc107;
+  color: #002244;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filter-btn:hover{
+  background-color: #ffca28;
+  transform: translateY(-2px);
+}
+
+.search{
+  margin-right: 10px;
+  border: none;
+}
+
+.search-box {
+  padding: 6px 10px;
+  margin-right: 5px;
+  width: 250px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 25px;
+  background-color: #ffc107;
+  color: #002244;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-btn:hover {
+  background-color: #ffca28;
+  transform: translateY(-2px);
 }
