@@ -5,7 +5,7 @@ import Shimmer from './Shimmer';
 const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
-    const [searchText, setSearchText] = useState("")
+    const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
         fetchData();
@@ -37,8 +37,8 @@ const Body = () => {
                 className='filter-btn'
                 onClick={() => {
                     const filteredList = listOfRestaurants.filter(
-                        (res) => res.data.avgRating > 4);
-                        setListOfRestaurants(filteredList);
+                    (res) => res.data.avgRating > 4);
+                    setListOfRestaurants(filteredList);
                 }}
             >
                 Top Rated Restaurant
