@@ -40,6 +40,11 @@
   overflow: hidden;
 }
 
+.res-card>h3{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: lighter;
+}
+
 .res-card:hover{
   cursor: pointer;
   transform: scale(1.05) translateY(-10px);
