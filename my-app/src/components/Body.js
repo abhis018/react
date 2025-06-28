@@ -23,7 +23,7 @@ const Body = () => {
   return listOfRestaurants.length === 0 ? (<Shimmer/> ): (
     <div className="body">
         <div className='filter'>
-            <div className='search'>
+            {/* <div className='search'>
                 <input type='text' placeholder='Search.....' className='search-box' value={searchText} onChange={(e) => setSearchText(e.target.value)}>{console.log(searchText)}</input>
                 <button className="search-btn" onClick={() => {
                     const filteredRestaurant = listOfRestaurants.filter((res) => res?.data?.name?.toLowerCase().includes(searchText.toLowerCase()));
@@ -31,7 +31,7 @@ const Body = () => {
                 }}>
                     Search
                 </button>
-            </div>
+            </div> */}
 
             <button 
                 className='filter-btn'
