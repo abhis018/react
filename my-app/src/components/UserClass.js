@@ -7,6 +7,12 @@ class UserClass extends React.Component{
             count: 0,
         }
     }
+    async componentDidMount(){
+        const data = await fetch("https://api.github.com/users/akshaymarch7");
+        const json = await data.json();
+    }
+
+
     render(){
         const {name} = this.props;
         const {count} = this.state;
