@@ -1,52 +1,34 @@
-import { useEffect, useState } from "react";
+
 import { useParams } from "react-router-dom";
-import { IMG_CDN_URL } from "../contants";
-import useRestaurant from "../utils/useRestaurant";
+import useRestaurantMenu from "../utils/useRestaurant";
 import Shimmer from "./Shimmer";
-import { addItem } from "../utils/cartSlice";
-import { useDispatch } from "react-redux";
 
 const RestaurantMenu = () => {
-  const { resId } = useParams();
+  const {resId} = useParams();
 
-  const restaurant = useRestaurant(resId);
+  const resInfo = useRestaurantMenu(resId);
+ 
 
-  const dispatch = useDispatch();
+ if(resInfo === null) return <Shimmer/>;
 
-  const addFoodItem = (item) => {
-    dispatch(addItem(item));
-  };
+ const{name, cuisines, costForTwoMsg} = resInfo?.cards[0]?.card?.card?.info;
+const {itemCards} = resInfo?.cards[2]?.groupedCard?.cardGroupmap?.REGULAR?.cards[1]?.card?.card;
 
-  return !restaurant ? (
-    <Shimmer />
-  ) : (
-    <div className="flex">
-      <div>
-        <h1>Restraunt id: {resId}</h1>
-        <h2>{restaurant?.name}</h2>
-        <img src={IMG_CDN_URL + restaurant?.cloudinaryImageId} />
-        <h3>{restaurant?.area}</h3>
-        <h3>{restaurant?.city}</h3>
-        <h3>{restaurant?.avgRating} stars</h3>
-        <h3>{restaurant?.costForTwoMsg}</h3>
-      </div>
-      <div className="p-5">
+
+
+  return (
+    <div className="menu">
+        <h1>{name}</h1>
+        <p>{cuisines.join(", ")}-{costForTwoMsg}</p>
         <h1>Menu</h1>
-        <ul data-testid="menu">
-          {Object.values(restaurant?.menu?.items).map((item) => (
-            <li key={item.id}>
-              {item.name} -{" "}
-              <button
-                data-testid="addBtn"
-                className="p-1 bg-green-50"
-                onClick={() => addFoodItem(item)}
-              >
-                Add
-              </button>
+        <ul>
+          {itemCards.map((item) => (
+            <li key={item.card.info.id}>
+              {item.card.info.name} -{" Rs. "}
+              {item.card.info.price/100 || item.card.info.defaultPrice/100}
             </li>
           ))}
         </ul>
-      </div>
     </div>
   );
 };
