@@ -25,8 +25,6 @@
 .nav-container > ul > li {
   padding: 0px 20px;
   margin: 10px;
-  color: #fff;
-  text-shadow:  3px 3px 0 #6d0aca;
 }
 
 
@@ -41,8 +39,7 @@
 }
 
 .res-card>h3{
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-weight: 100;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .res-card:hover{
@@ -180,11 +177,6 @@ h5{
   background-color: #ffca28;
   transform: translateY(-2px);
 }
-
-
-
-
-
 
 
 .user-card{
