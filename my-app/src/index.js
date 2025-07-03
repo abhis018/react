@@ -5,6 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import About from './components/About';
+import { lazy, Suspense } from 'react';
+
+
+const Grocery = lazy(() => import('./components/Grocery'));
 
 const appRouter = createBrowserRouter([
   {
@@ -14,6 +18,10 @@ const appRouter = createBrowserRouter([
   {
     path:"/about",
     element: <About/>
+  },
+  {
+    path: "/grocery",
+    element: <Suspense fallback={<h1>Loading....</h1>}><Grocery/></Suspense>
   },
 ])
 
