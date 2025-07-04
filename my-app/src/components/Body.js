@@ -1,4 +1,4 @@
-import RestaurantCard from './RestaurantCard';
+import RestaurantCard,{withPromotedLabel} from './RestaurantCard';
 import { useState, useEffect } from 'react';
 import Shimmer from './Shimmer';
 import useOnlineStatus from '../utils/useOnlineStatus';
@@ -7,6 +7,8 @@ const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
     const [searchText, setSearchText] = useState("");
+
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard)
 
     useEffect(() => {
         fetchData();
@@ -47,7 +49,7 @@ const Body = () => {
                 className='filter-btn'
                 onClick={() => {
                     const filteredList = listOfRestaurants.filter(
-                    (res) => res.data.avgRating > 4);
+                    (res) => res.info.avgRating > 4);
                     setListOfRestaurants(filteredList);
                 }}
             >
@@ -56,6 +58,7 @@ const Body = () => {
         </div>
         <div className='res-container'>
           {filteredRestaurant?.map((restaurant) => (
+            restaurant.info.promoted ? <RestaurantCardPromoted key={restaurant.info.id} resData={restaurant} /> :
             <RestaurantCard key={restaurant.info.id} resData={restaurant} />))} 
         </div>
     </div>
