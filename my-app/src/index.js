@@ -6,6 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import About from './components/About';
 import { lazy, Suspense } from 'react';
+import Error from './components/Error';
+import Body from './components/Body';
+import Contact from './components/Contact';
+import Cart from './components/Cart';
+import RestaurantMenu from "./components/RestaurantMenu";
 
 
 const Grocery = lazy(() => import('./components/Grocery'));
@@ -14,15 +19,34 @@ const appRouter = createBrowserRouter([
   {
     path:"/",
     element: <App/>,
-  },
-  {
-    path:"/about",
-    element: <About/>
-  },
-  {
-    path: "/grocery",
-    element: <Suspense fallback={<h1>Loading....</h1>}><Grocery/></Suspense>
-  },
+    children: [
+      {
+        path:"/",
+        element: <Body/>
+      },
+      {
+        path:"/about",
+        element: <About/>
+      },
+      {
+        path:"/contact",
+        element: <Contact/>
+      },
+      {
+        path:"/cart",
+        element: <Cart/>
+      },
+      {
+        path:"/restaurants/:resId",
+        element: <RestaurantMenu/>
+      },
+      {
+        path: "/grocery",
+        element: <Suspense fallback={<h1>Loading....</h1>}><Grocery/></Suspense>
+      },
+        ],
+        errorElement: <Error/>
+      },
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
